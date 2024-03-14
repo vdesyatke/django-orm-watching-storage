@@ -4,20 +4,14 @@ from environs import Env
 env = Env()
 env.read_env()  # read .env file, if it exists
 
-DB_HOST = env('DB_HOST')
-DB_USER = env('DB_USER')
-DB_PASSWORD = env('DB_PASSWORD')
-PORT = env.int('PORT')
-NAME = env('NAME')
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST': DB_HOST,
-        'PORT': PORT,
-        'NAME': NAME,
-        'USER': DB_USER,
-        'PASSWORD': DB_PASSWORD,
+        'HOST': env('DB_HOST'),
+        'PORT': env.int('PORT'),
+        'NAME': env('NAME'),
+        'USER': env('DB_USER'),
+        'PASSWORD': env('DB_PASSWORD'),
     }
 }
 
@@ -29,7 +23,7 @@ DEBUG = env.bool('DEBUG', False)
 
 ROOT_URLCONF = 'project.urls'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
