@@ -14,6 +14,10 @@ This console shows:
 * DB_USER
 * DB_PASSWORD
 * SECRET_KEY
+* DEBUG
+* PORT
+* NAME
+* ALLOWED_HOSTS
 5. In the root directory of the project create a file named '.env', put the environment variables in it.
 
 ## Usage
