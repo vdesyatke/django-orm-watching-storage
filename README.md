@@ -10,14 +10,10 @@ This console shows:
 2. Install, run and activate your virtual environment, details [here](https://docs.python-guide.org/dev/virtualenvs/).
 3. To install the dependencies, simply run ```pip install -r requirements.txt```.
 4. Retrieve from the system administrator the environment variables:
-* DB_HOST
-* DB_USER
-* DB_PASSWORD
 * SECRET_KEY
 * DEBUG
-* PORT
-* NAME
 * ALLOWED_HOSTS
+* DATABASE_URL
 5. In the root directory of the project create a file named '.env', put the environment variables in it.
 
 ## Usage
